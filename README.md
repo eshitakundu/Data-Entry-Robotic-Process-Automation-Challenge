@@ -17,18 +17,18 @@ This UiPath automation project is designed to manage files dynamically, automate
 
 ## Features
 
-- **Dynamic Folder Creation**: Automatically creates `input` and `output` folders if they don’t exist, ensuring seamless file management.
-- **File Download**: Downloads an Excel file from a specified website and stores it in the dynamically created `input` folder for easy access.
+- **Dynamic Folder Creation**: Automatically creates `input_excel` and `output_screenshot` folders if they don’t exist, ensuring seamless file management.
+- **File Download**: Downloads an Excel file from a specified website and stores it in the dynamically created `input_excel` folder for easy access.
 - **Optimized Data Entry**: Automates data entry using a **Parallel** activity combined with **Set Text**, significantly improving execution speed.
 - **Conditional Logic with Pick Branch**: Uses a **Pick Branch** activity to handle scenarios where the website may have closed or reset. This feature ensures the automation can resume by clicking **Reset** if necessary before starting data entry.
-- **Screenshot Capture**: Takes a screenshot after form submission and saves it in the `output` folder, allowing for visual verification of the completion.
+- **Screenshot Capture**: Takes a screenshot after form submission and saves it in the `output_screenshot` folder, allowing for visual verification of the completion.
 
 ## Project Structure
 
 ```plaintext
 Project Folder
 ├── Main.xaml                   # Central workflow to invoke each sub-workflow in sequence
-├── FolderCreation.xaml         # Workflow to dynamically create 'input' and 'output' folders
+├── FolderCreation.xaml         # Workflow to dynamically create 'input_excel' and 'output_screenshot' folders
 ├── Data Entry.xaml             # Workflow to automate data entry using Parallel and Set Text activities
 ├── Screenshot.xaml             # Workflow to capture and save a screenshot after submission
 └── README.md                   # Project documentation
@@ -52,13 +52,13 @@ Project Folder
 ### 1. Folder Creation
 
 - The **FolderCreation.xaml** workflow ensures the required folders are set up:
-  - `input` folder: Used for storing downloaded files (Excel).
-  - `output` folder: Used for saving the screenshot after automation.
+  - `input_excel` folder: Used for storing downloaded files (Excel).
+  - `output_screenshot` folder: Used for saving the screenshot after automation.
 - These folders are created dynamically within the project’s root directory, making the project adaptable to different systems.
 
 ### 2. File Download
 
-- The project includes a step to download an Excel file directly from a specified website and store it in the `input` folder. This file is then used as part of the data entry process.
+- The project includes a step to download an Excel file directly from a specified website and store it in the `input_excel` folder. This file is then used as part of the data entry process.
 
 ### 3. Data Entry with Optimizations
 
@@ -69,14 +69,14 @@ Project Folder
 ### 4. Screenshot Capture
 
 - The **Screenshot.xaml** workflow captures a screenshot after data entry and form submission, showing the completion state.
-- The screenshot is saved in the `output` folder for record-keeping or validation purposes.
+- The screenshot is saved in the `output_screenshot` folder for record-keeping or validation purposes.
 
 ### Running the Automation
 
 - **Run Main.xaml**: The **Main.xaml** file orchestrates all workflows in sequence:
-  - It begins with the folder creation workflow to set up the `input` and `output` folders.
+  - It begins with the folder creation workflow to set up the `input_excel` and `output_screenshot` folders.
   - Proceeds to the data entry workflow, where the Excel file is downloaded, and data is entered.
-  - Ends with the screenshot capture workflow to save a confirmation screenshot in the `output` folder.
+  - Ends with the screenshot capture workflow to save a confirmation screenshot in the `output_screenshot` folder.
 
 ## Requirements
 
@@ -88,4 +88,4 @@ Project Folder
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
---- 
+---
